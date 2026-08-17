@@ -1,69 +1,74 @@
 import Image from "next/image";
-
+import Link from "next/link";
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="w-full h-dvh bg-green-500 bg-cover flex flex-col" style={{backgroundImage: `url("/bg1.png")`}}>
+      <div className="w-full h-[20%] flex">
+        <div className="w-[25%] flex justify-center items-center">
+          <Image src="/logo.png" alt="Logo" width={100} height={100} className="h-full object-contain"/>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="w-[50%] flex justify-center items-center">
+          <label className="text-white place-self-center text-[60px] font-bold" >Transitspot</label>
         </div>
-      </main>
+        <div className="w-[25%] justify-between"></div>
+      </div>
+      <div className='w-full h-[60%] flex items-center justify-between'>
+                    <div className='w-[45%] h-[70%] ml-10 bg-white/10 flex justify-center items-center flex-col'>
+                        <div className='text-white  font-inter text-[32px] w-[90%] h-[80%] flex flex-col justify-between'>
+                            Selamat datang di TransitSpot: Temukan stasiun kereta terdekat dengan mudah! TransitSpot adalah sistem informasi geografis interaktif yang memungkinkan Anda menemukan stasiun kereta terdekat di sekitar lokasi Anda.
+                            <Link href='/artikel' className="btn border-0 w-[200px] h-[40px] rounded-xl bg-oren text-white flex flex-row justify-center items-center">
+                                <p className='font-plex font-semibold text-[18px] mr-3'>Lihat Artikel</p>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className='h-full w-[12%] flex justify-center items-center'>
+                    <div className="drawer-content">
+                                <label htmlFor="my-drawer-4" className="drawer-button btn border-0 rounded-full w-[90px] h-[90px] bg-oren flex justify-center items-center">
+                                <img src={"/icon2.png"} className='h-[70%] object-cover'></img>
+                                </label>
+                            </div> 
+                        
+                    </div>
+                    
+                </div>
+      
+      <div className='w-full h-[20%] flex justify-center items-center'>
+                    <Link href='/map' className="btn border-0 w-[250px] h-[40px] rounded-lg bg-oren text-white flex flex-row justify-center items-center">
+                    <p className='font-plex font-semibold text-[18px] mr-3'>Cari Stasiun</p>
+                    <img src={"/icon1.png"} className='h-[50%] object-contain'></img>
+                    </Link>
+                </div>
+                <div className="drawer drawer-end">
+                    <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                    <div className="drawer-side" >
+                        <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
+                        <ul className="menu w-[25%] h-full bg-transparent p-0 justify-center">
+                            <div className='w-full h-[70%] bg-white rounded-l-3xl flex flex-col justify-around items-center'>
+                                <Link href='/' className='btn w-[90%] bg-white border-none h-[15%] flex flex-row justify-start group items-center rounded-none'>
+                                    <img src={"/home.png"} className='h-[70%] w-[20%] ml-10 object-contain mr-5 '></img>
+                                    <p className='w-[20%] font-plex font-bold text-[40px] text-oren'>Home</p>
+                                </Link>
+                                <Link href='/map' className='btn w-[90%] bg-white border-none h-[15%] flex flex-row justify-start group items-center rounded-none'>
+                                    <img src={"/peta.png"} className='h-[70%] w-[20%] ml-10 object-contain mr-5'></img>
+                                    <p className='w-[20%] font-plex font-bold text-[40px] text-oren'>Peta</p>
+                                </Link>
+                                <Link href='/artikel' className='btn w-[90%] bg-white border-none h-[15%] flex flex-row justify-start group items-center rounded-none'>
+                                    <img src={"/artikel.png"} className='h-[70%] w-[20%] ml-10 object-contain mr-5'></img>
+                                    <p className='w-[20%] font-plex font-bold text-[40px] text-oren'>Artikel</p>
+                                </Link>
+                                <Link href='/sdg' className='btn w-[90%] bg-white border-none h-[15%] flex flex-row justify-start group items-center rounded-none'>
+                                    <img src={"/sdg.png"} className='h-[70%] w-[20%] ml-10 object-contain mr-5'></img>
+                                    <p className='w-[20%] font-plex font-bold text-[40px] text-oren'>SDG's</p>
+                                </Link>
+                                <Link href={'/login'} className='btn w-[90%] bg-white border-none h-[15%] flex flex-row justify-start group items-center rounded-none'>
+                                    <img src={"/login.png"} className='h-[70%] w-[20%] ml-10 object-contain mr-5'></img>
+                                    <p className='w-[20%] font-plex font-bold text-[40px] text-oren'>Login</p>
+                                </Link>
+                                
+                            </div>
+                        </ul>
+                    </div>
+                </div>
     </div>
   );
 }
